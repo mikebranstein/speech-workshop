@@ -31,13 +31,13 @@ export class SpeechConnectionFactory implements IConnectionFactory {
         let endpoint = "";
         switch (config.RecognitionMode) {
             case RecognitionMode.Conversation:
-                endpoint = this.Host + this.ConversationRelativeUri;
+                endpoint = this.Host;
                 break;
             case RecognitionMode.Dictation:
-                endpoint = this.Host + this.DictationRelativeUri;
+                endpoint = this.Host;
                 break;
             default:
-                endpoint = this.Host + this.InteractiveRelativeUri; // default is interactive
+                endpoint = this.Host;
                 break;
         }
 

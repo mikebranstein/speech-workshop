@@ -2051,13 +2051,13 @@ var SpeechConnectionFactory = /** @class */ (function () {
             var endpoint = "";
             switch (config.RecognitionMode) {
                 case Exports_3.RecognitionMode.Conversation:
-                    endpoint = _this.Host + _this.ConversationRelativeUri;
+                    endpoint = _this.Host;
                     break;
                 case Exports_3.RecognitionMode.Dictation:
-                    endpoint = _this.Host + _this.DictationRelativeUri;
+                    endpoint = _this.Host;
                     break;
                 default:
-                    endpoint = _this.Host + _this.InteractiveRelativeUri; // default is interactive
+                    endpoint = _this.Host;
                     break;
             }
             var queryParams = {
@@ -3594,7 +3594,8 @@ var WebsocketConnection = /** @class */ (function () {
         if (queryParameters) {
             for (var paramName in queryParameters) {
                 if (paramName) {
-                    queryParams += i === 0 ? "?" : "&";
+                    // queryParams += i === 0 ? "?" : "&";
+                    queryParams += "&";
                     var val = encodeURIComponent(queryParameters[paramName]);
                     queryParams += paramName + "=" + val;
                     i++;
