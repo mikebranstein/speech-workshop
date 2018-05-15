@@ -12,5 +12,10 @@ namespace Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Battle()
+        {
+            return View();
+        }
     }
 }
